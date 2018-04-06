@@ -1,0 +1,13 @@
+.social {
+    /* Remove default hyperlink styling, add our own colors and change font-size*/
+    a, a:visited {
+      color:tomato;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    /* This changes the link color when someone hovers their mouse over it */
+    a:hover {
+      color: darkred;
+    }
+}

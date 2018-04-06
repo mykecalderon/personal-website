@@ -3,9 +3,9 @@
 @push('body-class', 'home')
 
 @section('content')
-  <div class="container">
+  <div class="full-width full-height center flex flex-column justify-center text-center">
 
-    <img src="img/mychal_calderon.jpg" alt="Mychal Calderon" />
+    <img class="img-profile img-rounded center" src="img/mychal-calderon.jpg" alt="Mychal Calderon" />
     
     <h1>Mychal Calderon</h1>
     
@@ -13,7 +13,7 @@
 
     <p>Currently obsessed with Laravel, Vue.js, and TDD.</p>
 
-    <a href="/contact" class="btn contact-btn">Get in touch</a>
+    <a href="/contact" class="btn contact-btn center mb-1">Get in touch</a>
 
     <ul class="social">
       <li><a href="http://twitter.com/mykecalderon" title="Follow Mychal on Twitter" target="https://twitter.com/mykecalderon"><i class="fab fa-twitter"></i></a></li>

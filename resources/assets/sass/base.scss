@@ -1,0 +1,49 @@
+/* Resets */
+* {
+  box-sizing: border-box;
+}
+
+html, body, ul, li, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Declares font family, text color and adds a subtle pattern to the background */
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: $brand-primary;
+  background-image: url('/img/texture.png');
+  -webkit-font-smoothing: antialiased;
+  background-color: $bg-color;
+}
+
+/* Style our header tags */
+h1, h2 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 10px 0 0
+}
+
+h2 {
+  font-size: 22px;
+  color: $brand-secondary;
+}
+
+/* Adds some space around our bio */
+p {
+  padding: 20px 0;
+}
+
+/* Clears bullet points and places <li> items next to each other instead of stacked on top and changes font */
+li {
+  display: inline;
+  list-style: none;
+  padding: 0 4px;
+}

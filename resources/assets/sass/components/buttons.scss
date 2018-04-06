@@ -1,0 +1,18 @@
+/* Style our 'available' and 'unavailable' classes */
+.btn {
+  width: 60%;
+  border-radius: .25rem;
+  padding: 14px 0;
+  max-width: 400px;
+}
+
+.contact-btn {
+  color: $white;
+  background-color: $success;
+  text-decoration: none;
+  font-weight: 700;
+
+  &:hover {
+    background-color: darken($success, 10%);
+  }
+}

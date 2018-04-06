@@ -1,0 +1,19 @@
+input, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    min-width: 0;
+    padding: .75rem 1rem;
+    border: 0 solid #c4cdd5;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    padding-bottom: .5rem;
+}
+
+.input-inverse {
+    background-color: $bg-color;
+}
