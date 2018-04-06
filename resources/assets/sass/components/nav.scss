@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.nav-item {
+    padding: .5rem .75rem;
+
+    &.active {
+        border-bottom: 3px solid $success;
+    }
+}
+
+.nav-link {
+    text-decoration: none;
+}

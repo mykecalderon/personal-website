@@ -483,6 +483,28 @@ li {
   border-top: 5px solid #2ecc71;
 }
 
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+}
+
+.nav-item {
+  padding: .5rem .75rem;
+}
+
+.nav-item.active {
+  border-bottom: 3px solid #2ecc71;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
 input,
 textarea {
   -webkit-appearance: none;

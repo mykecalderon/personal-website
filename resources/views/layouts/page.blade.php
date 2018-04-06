@@ -27,6 +27,8 @@
         <!-- Styles -->
     </head>
     <body class="@yield('body-class', '')">
+        @include('nav')
+
         @yield('content')
 
         {{-- <script src="/js/app.js"></script> --}}
