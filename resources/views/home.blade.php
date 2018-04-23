@@ -16,8 +16,8 @@
     <a href="/contact" class="btn contact-btn center mb-1">Get in touch</a>
 
     <ul class="social">
-      <li><a href="http://twitter.com/mykecalderon" title="Follow Mychal on Twitter" target="https://twitter.com/mykecalderon"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="http://github.com/mykecalderon" title="View and contribute to Mychal's projects on GitHub" target="https://github.com/mykecalderon"><i class="fab fa-github"></i></a></li>
+      <li><a href="https://twitter.com/mykecalderon" title="Follow Mychal on Twitter" target="https://twitter.com/mykecalderon"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://github.com/mykecalderon" title="View and contribute to Mychal's projects on GitHub" target="https://github.com/mykecalderon"><i class="fab fa-github"></i></a></li>
     </ul>
 
   </div>
