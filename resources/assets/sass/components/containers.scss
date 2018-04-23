@@ -1,10 +1,10 @@
 /* Make container centered in page and center text inside <div> */
 .container {
-  width: 1000px;
+    max-width: 1000px;
 }
 
 .container-small {
-    width: 700px;
+    max-width: 700px;
 }
 
 .card {

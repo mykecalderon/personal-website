@@ -15,7 +15,7 @@ html, body {
 /* Declares font family, text color and adds a subtle pattern to the background */
 body {
   font-family: 'Quicksand', sans-serif;
-  color: $brand-primary;
+  color: $text-color;
   background-image: url('/img/texture.png');
   -webkit-font-smoothing: antialiased;
   background-color: $bg-color;
@@ -33,7 +33,7 @@ h1 {
 
 h2 {
   font-size: 22px;
-  color: $brand-secondary;
+  color: $brand-primary;
 }
 
 /* Adds some space around our bio */

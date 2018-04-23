@@ -8,10 +8,11 @@ nav {
     padding: .5rem .75rem;
 
     &.active {
-        border-bottom: 3px solid $success;
+        border-bottom: 3px solid $brand-primary;
     }
 }
 
 .nav-link {
     text-decoration: none;
+    color: $text-color;
 }

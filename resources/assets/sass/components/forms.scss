@@ -6,7 +6,6 @@ input, textarea {
     padding: .75rem 1rem;
     border: 0 solid #c4cdd5;
     border-radius: .25rem;
-    margin-bottom: 1rem;
 }
 
 label {
@@ -16,4 +15,15 @@ label {
 
 .input-inverse {
     background-color: $bg-color;
+}
+
+.required {
+    color: $error;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    .error {
+        color: $error;
+    }
 }
