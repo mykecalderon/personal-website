@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/contact', 'ContactController@index');
 Route::post('/contact', 'ContactController@store');
+
+Route::get('/blog/{slug}', 'PostController@show');
