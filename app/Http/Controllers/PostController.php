@@ -7,9 +7,16 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function show(WpApi $wp, $slug) 
+    protected $wp;
+
+    public function __construct(WpApi $wp)
     {
-        $post = $wp->posts(['slug' => 'my-test-post'])->first();
+        $this->wp = $wp;
+    }
+
+    public function show($slug) 
+    {
+        $post = $this->wp->posts(['slug' => 'my-test-post'])->first();
 
         return view('posts.show', compact('post'));
     }
