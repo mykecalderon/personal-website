@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class Post
 {
     protected $id;
-    protected $user_id;
+    protected $author;
     protected $title;
     protected $slug;
     protected $featured_image;
@@ -109,18 +109,6 @@ class Post
     }
 
     /**
-     * @param mixed $tags
-     *
-     * @return self
-     */
-    public function setTags($tags)
-    {
-        $this->tags = $tags;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getId()
@@ -129,35 +117,11 @@ class Post
     }
 
     /**
-     * @param mixed $id
-     *
-     * @return self
+     * @return Author
      */
-    public function setId($id)
+    public function getAuthor()
     {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
-     * @param mixed $user_id
-     *
-     * @return self
-     */
-    public function setUserId($user_id)
-    {
-        $this->user_id = $user_id;
-
-        return $this;
+        return $this->author;
     }
 
     /**
@@ -169,35 +133,11 @@ class Post
     }
 
     /**
-     * @param mixed $title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getSlug()
     {
         return $this->slug;
-    }
-
-    /**
-     * @param mixed $slug
-     *
-     * @return self
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
     }
 
     /**
@@ -209,35 +149,11 @@ class Post
     }
 
     /**
-     * @param mixed $featured_image
-     *
-     * @return self
-     */
-    public function setFeaturedImage($featured_image)
-    {
-        $this->featured_image = $featured_image;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getFeatured()
     {
         return $this->featured;
-    }
-
-    /**
-     * @param mixed $featured
-     *
-     * @return self
-     */
-    public function setFeatured($featured)
-    {
-        $this->featured = $featured;
-
-        return $this;
     }
 
     /**
@@ -249,35 +165,11 @@ class Post
     }
 
     /**
-     * @param mixed $excerpt
-     *
-     * @return self
-     */
-    public function setExcerpt($excerpt)
-    {
-        $this->excerpt = $excerpt;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getContent()
     {
         return $this->content;
-    }
-
-    /**
-     * @param mixed $content
-     *
-     * @return self
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-
-        return $this;
     }
 
     /**
@@ -289,35 +181,11 @@ class Post
     }
 
     /**
-     * @param mixed $format
-     *
-     * @return self
-     */
-    public function setFormat($format)
-    {
-        $this->format = $format;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getStatus()
     {
         return $this->status;
-    }
-
-    /**
-     * @param mixed $status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
     }
 
     /**
@@ -329,35 +197,11 @@ class Post
     }
 
     /**
-     * @param mixed $publishes_at
-     *
-     * @return self
-     */
-    public function setPublishesAt($publishes_at)
-    {
-        $this->publishes_at = $publishes_at;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getCreatedAt()
     {
         return $this->created_at;
-    }
-
-    /**
-     * @param mixed $created_at
-     *
-     * @return self
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
-
-        return $this;
     }
 
     /**
@@ -369,34 +213,10 @@ class Post
     }
 
     /**
-     * @param mixed $updated_at
-     *
-     * @return self
-     */
-    public function setUpdatedAt($updated_at)
-    {
-        $this->updated_at = $updated_at;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
+     * @return Category
      */
     public function getCategory()
     {
         return $this->category;
-    }
-
-    /**
-     * @param mixed $category
-     *
-     * @return self
-     */
-    public function setCategory($category)
-    {
-        $this->category = $category;
-
-        return $this;
     }
 }

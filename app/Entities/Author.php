@@ -21,35 +21,11 @@ class Author
     }
 
     /**
-     * @param mixed $id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * @param mixed $name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
     }
 
     /**
@@ -61,35 +37,11 @@ class Author
     }
 
     /**
-     * @param mixed $url
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * @param mixed $description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
     }
 
     /**
@@ -101,18 +53,6 @@ class Author
     }
 
     /**
-     * @param mixed $link
-     *
-     * @return self
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getSlug()
@@ -121,34 +61,10 @@ class Author
     }
 
     /**
-     * @param mixed $slug
-     *
-     * @return self
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getAvatarUrls()
     {
         return $this->avatar_urls;
-    }
-
-    /**
-     * @param mixed $avatar_urls
-     *
-     * @return self
-     */
-    public function setAvatarUrls($avatar_urls)
-    {
-        $this->avatar_urls = $avatar_urls;
-
-        return $this;
     }
 }
