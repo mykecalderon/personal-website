@@ -5,7 +5,7 @@
 @section('content')
   <div class="full-height flex align-center">
       <div class="full-width">
-          <form id="contact-form" class="container-small center p-2 card accent-border" action="/contact" method="post">
+          <form id="contact-form" class="container-small center p-2 card accent-border" action="{{ route('contact.store') }}" method="post">
               @method('POST')
               @csrf
 
