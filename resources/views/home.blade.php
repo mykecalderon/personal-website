@@ -11,7 +11,7 @@
     
     <h2>Web Developer</h2>
 
-    <p>Currently obsessed with Laravel, Vue.js, and TDD.</p>
+    <p class="container-small center p-2">From a young age, I have had an insatiable desire to learn how things work. As such, it's no surprise that my first ventures into the world of programming came about because I wanted to know how video games were made. Luckily, my high school offered several programming classes and I've been hooked ever since. After over a decade of coding, my desire to learn and enthusiasm for the field has only grown. When I'm not trying to improve my coding skills, I enjoy spending time with my family, playing video games, reading a good book, and drawing.</p>
 
     <a href="/contact" class="btn contact-btn center mb-1">Get in touch</a>
 
