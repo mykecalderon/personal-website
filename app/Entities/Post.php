@@ -6,7 +6,7 @@ use App\Entities\Author;
 use App\Entities\Category;
 use Carbon\Carbon;
 
-class Post
+class Post extends WpEntity
 {
     protected $id;
     protected $author;
@@ -24,15 +24,10 @@ class Post
     protected $category;
     protected $tags;
 
-    public static function createFromData($data)
-    {
-        return (new static)->hydrate($data);
-    }
-
     public function hydrate($data)
     {
         $this->id = $data->id;
-        $this->author = $this->extractAuthor($data->_embedded->author);
+        $this->author = $this->createAuthor($data->_embedded->author);
         $this->title = $data->title->rendered;
         $this->slug = $data->slug;
         $this->featured_image = $this->featuredImage($data->_embedded);
@@ -44,26 +39,17 @@ class Post
         $this->publishes_at = $this->carbonDate($data->date);
         $this->created_at = $this->carbonDate($data->date);
         $this->updated_at = $this->carbonDate($data->modified);
-        $this->category = $this->extractCategory($data->_embedded->{"wp:term"});
-        $this->tags = $this->extractTags($data->_embedded->{"wp:term"});
+        $this->category = $this->createCategory($data->_embedded->{"wp:term"});
+        $this->tags = $this->createTags($data->_embedded->{"wp:term"});
 
         return $this;
     }
 
-    public function extractAuthor($data)
+    public function createAuthor($data)
     {
         $data = head($data);
 
-        $author = new Author();
-        $author->setId($data->id);
-        $author->setName($data->name);
-        $author->setUrl($data->url);
-        $author->setDescription($data->description);
-        $author->setLink($data->link);
-        $author->setSlug($data->slug);
-        $author->setAvatarUrls($data->avatar_urls);
-
-        return $author;
+        return Author::createFromData($data);
     }
 
     public function featuredImage($data)
@@ -77,20 +63,14 @@ class Post
         return null;
     }
 
-    public function extractCategory($data)
+    public function createCategory($data)
     {
-        $cat = collect($data)->collapse()->where('taxonomy', 'category')->first();
+        $data = collect($data)->collapse()->where('taxonomy', 'category')->first();
 
-        $category = new Category();
-        $category->setId($cat->id);
-        $category->setName($cat->name);
-        $category->setSlug($cat->slug);
-        $category->setLink($cat->link);
-
-        return $category;
+        return Category::createFromData($data);
     }
 
-    public function extractTags($data)
+    public function createTags($data)
     {
         return collect($data)->collapse()->where('taxonomy', 'post_tag')->pluck('name')->toArray();
     }

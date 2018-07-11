@@ -2,7 +2,9 @@
 
 namespace App\Entities;
 
-class Author
+use App\Entities\WpEntity;
+
+class Author extends WpEntity
 {
     protected $id;
     protected $name;
@@ -11,6 +13,19 @@ class Author
     protected $link;
     protected $slug;
     protected $avatar_urls;
+
+    public function hydrate($data)
+    {
+        $this->id = $data->id;
+        $this->name = $data->name;
+        $this->url = $data->url;
+        $this->description = $data->description;
+        $this->link = $data->link;
+        $this->slug = $data->slug;
+        $this->avatar_urls = $data->avatar_urls;
+
+        return $this;
+    }
 
     /**
      * @return mixed
