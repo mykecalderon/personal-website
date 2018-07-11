@@ -80,6 +80,11 @@ class Post extends WpEntity
         return Carbon::parse($date);
     }
 
+    public function getUrl()
+    {
+        return route('posts.show', $this->slug);
+    }
+
     /**
      * @return mixed
      */

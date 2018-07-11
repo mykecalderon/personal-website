@@ -8,7 +8,7 @@
     @foreach ($posts as $post)
         <div class="card container-small center p-2 my-1">
             <div class="post">
-                <h1>{{ $post->getTitle() }}</h1>
+                <h1><a href="{{ $post->getUrl() }}">{{ $post->getTitle() }}<a/></h1>
                 <div>{!! $post->getExcerpt() !!}</div>
             </div>
         </div>
