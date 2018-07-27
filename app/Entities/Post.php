@@ -30,7 +30,7 @@ class Post extends WpEntity
         $this->author = $this->createAuthor($data->_embedded->author);
         $this->title = $data->title->rendered;
         $this->slug = $data->slug;
-        $this->featured_image = $this->featuredImage($data->_embedded);
+        $this->featured_image = $this->createFeaturedImage($data->_embedded);
         $this->featured = ($data->sticky) ? 1 : null;
         $this->excerpt = $data->excerpt->rendered;
         $this->content = $data->content->rendered;
@@ -52,13 +52,12 @@ class Post extends WpEntity
         return Author::createFromData($data);
     }
 
-    public function featuredImage($data)
+    public function createFeaturedImage($data)
     {
         if (property_exists($data, "wp:featuredmedia")) {
             $data = head($data->{"wp:featuredmedia"});
-            if (isset($data->source_url)) {
-                return $data->source_url;
-            }
+
+            return Image::createFromData($data);
         }
         return null;
     }
