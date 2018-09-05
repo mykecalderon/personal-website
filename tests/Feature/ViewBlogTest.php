@@ -14,5 +14,6 @@ class ViewBlogTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('My Test Post');
+        $response->assertSee('http://wp.me.test/wp-content/uploads/2018/03/IMG_0035-150x150.jpg');
     }
 }

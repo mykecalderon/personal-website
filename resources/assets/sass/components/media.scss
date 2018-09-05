@@ -1,0 +1,11 @@
+.media {
+    display: flex;
+
+    .media-image {
+        @extend .mr-1;
+    }
+
+    .media-content {
+        flex-grow: 1;
+    }
+}
