@@ -21,6 +21,7 @@ class ContactController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ]);
 
         $contact_submission = ContactSubmission::create([

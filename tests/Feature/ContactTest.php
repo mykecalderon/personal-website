@@ -2,10 +2,11 @@
 
 namespace Tests\Feature;
 
+use Anhskohbo\NoCaptcha\Facades\NoCaptcha;
 use App\Mail\ContactFormSubmitted;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 use Mail;
+use Tests\TestCase;
 
 class ContactTest extends TestCase
 {
@@ -54,27 +55,34 @@ class ContactTest extends TestCase
     /** @test */
     function contact_submission_stored_in_database()
     {
-        $data = [
+        $this->mockCaptcha();
+
+        $response = $this->json('POST', '/contact', [
             'name' => 'John Doe',
             'email' => 'test@example.com',
             'message' => 'Lorem ipsum dolor sit amet',
-        ];
-
-        $response = $this->json('POST', '/contact', $data);
+            'g-recaptcha-response' => '1',
+        ]);
 
         $response->assertStatus(200);
-        $this->assertDatabaseHas('contact_submissions', $data);
+        $this->assertDatabaseHas('contact_submissions', [
+            'name' => 'John Doe',
+            'email' => 'test@example.com',
+            'message' => 'Lorem ipsum dolor sit amet',
+        ]);
     }
 
     /** @test */
     function sends_notification_email_after_submission()
     {
         Mail::fake();
+        $this->mockCaptcha();
 
         $response = $this->json('POST', '/contact', [
             'name' => 'John Doe',
             'email' => 'test@example.com',
             'message' => 'Lorem ipsum dolor sit amet',
+            'g-recaptcha-response' => '1',
         ]);
 
         $response->assertStatus(200);
@@ -86,5 +94,18 @@ class ContactTest extends TestCase
         Mail::assertQueued(ContactFormSubmitted::class, function ($mail) {
             return $mail->hasTo(env('MAIL_FROM_ADDRESS'));
         });
+    }
+
+    private function mockCaptcha()
+    {
+        // prevent validation error on captcha
+        NoCaptcha::shouldReceive('verifyResponse')
+            ->once()
+            ->andReturn(true);
+
+        // provide hidden input for your 'required' validation
+        NoCaptcha::shouldReceive('display')
+            ->zeroOrMoreTimes()
+            ->andReturn('<input type="hidden" name="g-recaptcha-response" value="1" />');
     }
 }
